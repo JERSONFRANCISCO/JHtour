@@ -1,0 +1,55 @@
+html, body 
+{
+	margin: 0px; /* Comentario en CSS*/
+	padding: 0px; /* Los margenes son reducidos a 0*/
+	overflow: hidden; /*Ocultamos el Scroll de la pagina*/
+	font-family: Segoe UI, Century Gothic,Verdana, Arial;
+	background: #F9F9F9;
+}
+
+form{
+	text-align: center;
+}
+
+#login{
+	position: relative;
+	width: 350px;
+	height: 200px;
+	margin: 150px auto;
+	border: 1px solid #4285F4;
+	border-top: 20px solid #4285F4;
+	border-radius: 8px;
+	overflow: hidden;
+	padding: 20px 10px 10px 10px;
+	background: #FFF;
+}
+
+.cajatexto{
+	padding: 5px;
+	margin: 10px;
+	border-radius: 5px;
+	border: 1px solid #4285F4;
+	width: 300px;
+	color: #555;
+}
+
+.boton{
+	border-radius: 80px;
+	background: #4285F4;
+	color: #FFF;
+	position: relative;
+	border: 0px;
+	padding: 5px;
+	margin: 10px 0 0 0;
+	height: 50px;
+	width: 50px;
+}
+
+.boton:hover{
+	background: #02F71A;
+	cursor: pointer;
+}
+
+.boton:active{
+	background: #09D9F9;
+}
