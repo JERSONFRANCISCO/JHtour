@@ -500,7 +500,7 @@
                 <a href="#">Terms of Use</a>
               </li>
                <li class="list-inline-item">
-                <a href="login.php">Terms of Use</a>
+                <a href="login.php">LOG IN</a>
               </li>
             </ul>
           </div>
