@@ -183,7 +183,7 @@ img::-moz-selection {
 header.masthead { 
   text-align: center;
   color: white;
-  background-image: url("../img/header-bg.jpg");
+  background-image: url('http://localhost/tourPage/app_core/resources/header-bg.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -606,7 +606,7 @@ header.masthead .intro-text .intro-heading {
 
 section#contact { 
   background-color: #212529;
-  background-image: url("../img/img2.jpg");
+  background-image: url('http://localhost/tourPage/app_core/resources/img2.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -716,3 +716,4 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   box-shadow: 0px 0px 15px 15px #dc3545;;
   -webkit-box-shadow: 0px 0px 15px 15px #dc3545;;
 }
+";
