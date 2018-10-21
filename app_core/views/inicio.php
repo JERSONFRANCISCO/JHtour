@@ -243,7 +243,7 @@
         echo " <li>Categoría: $value[1]</li>";
         echo " </ul>";
         echo " <button class='btn btn-primary' data-dismiss='modal' type='button'>";
-        echo " <i class='fas fa-times'></i> Close Project </button>";
+        echo " <i class='fas fa-times'></i> Cerrar</button>";
         echo " </div>";
         echo " </div>";
         echo " </div>";
