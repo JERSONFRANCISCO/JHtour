@@ -24,6 +24,8 @@
   define('__RSC_FLE_HOST_PATH', $mysite . "/app_core/resources/files/");
   define('__RSC_TBN_HOST_PATH', $mysite . "/app_core/resources/thumbnails/");
   define('__RSC_IMG_HOST_PATH', $mysite . "/app_core/resources/images/");
+  define('__RSC_PORTFOLIO_HOST_PATH', $mysite . "/app_core/resources/portfolio/");
+  define('__RSC_LOGOS_HOST_PATH', $mysite . "/app_core/resources/logos/");
 
   define('__APP_DSG', $mysite . "/app_design/");
   define('__JS_PATH', $mysite . "/app_design/js/");

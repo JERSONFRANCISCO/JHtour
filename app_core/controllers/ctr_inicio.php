@@ -8,11 +8,14 @@
 		{
 			$this->postdata = new mdl_inicio();
 		}
-		public function get_posts()
+		public function obtener_servicios()
 		{
-			return $this->postdata->obtener_posts();
+			return $this->postdata->obtener_servicios();
 		}
-
+		public function obtener_tours()
+		{
+			return $this->postdata->obtener_tours();
+		}
 	}
 
 ?>

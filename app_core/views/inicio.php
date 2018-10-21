@@ -49,9 +49,8 @@
           </div>
         </div>
         <div class="row text-center">
-          
         <?php
-            foreach($ctr_inicio->get_posts() as $value){
+            foreach($ctr_inicio->obtener_servicios() as $value){
               echo "<div class='col-md-4'>";
               echo "<span class='fa-stack fa-4x'>";
               echo "<i class='fas fa-circle fa-stack-2x text-primary'></i>";
@@ -76,91 +75,25 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i style="color: red;" class="fas fa-3x">$ 30</i>
-                </div>
-              </div>
-              <!-- <i class="fas  fa-stack-2x ">50$</i> -->
-              <img  class="img-fluid" style="height: 200px !important; width: 100%;" src="http://localhost/tourPage/app_core/resources/portfolio/01-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Kayak</h4>
-              <p class="text-muted">Illustration</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i style="color: red;" class="fas fa-3x">$ 30</i>
-                </div>
-              </div>
-              <img class="img-fluid" style="height: 200px !important; width: 100%;" src="http://localhost/tourPage/app_core/resources/portfolio/02-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Explore</h4>
-              <p class="text-muted">Graphic Design</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i style="color: red;" class="fas fa-3x">$ 30</i>
-                </div>
-              </div>
-              <img class="img-fluid"  style="height: 200px !important; width: 100%;"  src="http://localhost/tourPage/app_core/resources/portfolio/03-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Finish</h4>
-              <p class="text-muted">Identity</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i style="color: red;" class="fas fa-3x">$ 30</i>
-                </div>
-              </div>
-              <img class="img-fluid" style="height: 200px !important; width: 100%;"  src="http://localhost/tourPage/app_core/resources/portfolio/04-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Lines</h4>
-              <p class="text-muted">Branding</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i style="color: red;" class="fas fa-3x">$ 30</i>
-                </div>
-              </div>
-              <img  class="img-fluid" style="height: 200px !important; width: 100%;"  src="http://localhost/tourPage/app_core/resources/portfolio/05-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Southwest</h4>
-              <p class="text-muted">Website Design</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i style="color: red;" class="fas fa-3x">$ 30</i>
-                </div>
-              </div>
-              <img class="img-fluid" style="height: 200px !important; width: 100%;"  src="http://localhost/tourPage/app_core/resources/portfolio/06-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Window</h4>
-              <p class="text-muted">Photography</p>
-            </div>
-          </div>
+          <?php
+            $tours = $ctr_inicio->obtener_tours();
+            foreach ($tours as $value) {
+              echo "<div class='col-md-4 col-sm-6 portfolio-item'>";
+              echo "<a class='portfolio-link' data-toggle='modal' href='#portfolioModal$value[8]'>";
+              echo "<div class='portfolio-hover'>";
+              echo "<div class='portfolio-hover-content'>";
+              echo "<i style='color: red;' class='fas fa-3x'>$value[7]</i>";
+              echo "</div>";
+              echo "</div>";
+              echo "<img  class='img-fluid' style='height: 200px !important; width: 100%;' src='".__RSC_TBN_HOST_PATH."$value[2]-thumbnail.jpg' alt=''>";
+              echo "</a>";
+              echo "<div class='portfolio-caption'>";
+              echo "<h4>$value[0]</h4>";
+              echo "<p class='text-muted'>$value[1]</p>";
+              echo "</div>";
+              echo "</div>";
+            }
+          ?>
         </div>
       </div>
     </section>
@@ -169,11 +102,13 @@
     <section class="py-5">
       <div class="container">
         <div class="row">
+
           <div class="col-md-3 col-sm-6">
             <a href="#">
               <img class="img-fluid d-block mx-auto" src="http://localhost/tourPage/app_core/resources/logos/envato.jpg" alt="">
             </a>
           </div>
+
           <div class="col-md-3 col-sm-6">
             <a href="#">
               <img class="img-fluid d-block mx-auto" src="http://localhost/tourPage/app_core/resources/logos/designmodo.jpg" alt="">
@@ -283,206 +218,38 @@
 
     <!-- Portfolio Modals -->
 
-    <!-- Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Kayak</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="http://localhost/tourPage/app_core/resources/portfolio/01-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Threads</li>
-                    <li>Category: Illustration</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="http://localhost/tourPage/app_core/resources/portfolio/02-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Explore</li>
-                    <li>Category: Graphic Design</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="http://localhost/tourPage/app_core/resources/portfolio/03-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Finish</li>
-                    <li>Category: Identity</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="http://localhost/tourPage/app_core/resources/portfolio/04-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Lines</li>
-                    <li>Category: Branding</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="http://localhost/tourPage/app_core/resources/portfolio/05-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Southwest</li>
-                    <li>Category: Website Design</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="http://localhost/tourPage/app_core/resources/portfolio/06-full.jpg" alt=""> 
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Window</li>
-                    <li>Category: Photography</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php 
+      foreach ($tours as $value) {
+        echo " <div class='portfolio-modal modal fade' id='portfolioModal$value[8]' tabindex='-1' role='dialog' aria-hidden='true'>";
+        echo " <div class='modal-dialog'>";
+        echo " <div class='modal-content'>";
+        echo " <div class='close-modal' data-dismiss='modal'>";
+        echo " <div class='lr'>";
+        echo " <div class='rl'></div>";
+        echo " </div>";
+        echo " </div>";
+        echo " <div class='container'>";
+        echo " <div class='row'>";
+        echo " <div class='col-lg-8 mx-auto'>";
+        echo " <div class='modal-body'>";
+        //<!-- Project Details Go Here -->
+        echo " <h2 class='text-uppercase'>$value[0]</h2>";
+        echo " <p class='item-intro text-muted'>$value[5]</p>";
+        echo " <img class='img-fluid d-block mx-auto' src='".__RSC_PORTFOLIO_HOST_PATH."$value[2]-full.jpg' alt=''>";
+        echo " <p style='text-align: justify !important;'>$value[6]</p>";
+        echo " <ul class='list-inline'>";
+        echo " <li>Valido hasta el : $value[3]</li>";
+        echo " <li>PRECIO : $value[7]</li>";
+        echo " <li>Categoría: $value[1]</li>";
+        echo " </ul>";
+        echo " <button class='btn btn-primary' data-dismiss='modal' type='button'>";
+        echo " <i class='fas fa-times'></i> Close Project </button>";
+        echo " </div>";
+        echo " </div>";
+        echo " </div>";
+        echo " </div>";
+        echo " </div>";
+        echo " </div>";
+        echo " </div>";
+      }
+    ?>
