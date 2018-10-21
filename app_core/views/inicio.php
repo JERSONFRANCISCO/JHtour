@@ -1,23 +1,3 @@
-  <style type="text/css">
-    header.masthead { 
-      text-align: center;
-      color: white;
-      background-image: url(<?php echo __RSC_HOST_PATH."header-bg.jpg";?>);
-      background-repeat: no-repeat;
-      background-attachment: scroll;
-      background-position: center center;
-      background-size: cover;
-      background-attachment: fixed;
-    } 
-    section#contact { 
-      background-color: #212529;
-      background-image: url(<?php echo __RSC_HOST_PATH."img2.jpg";?>);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-attachment: fixed;
-    }
-  </style>
-
   <!-- <body id="page-top" onload="rotar_imagen();"> -->
   <body id="page-top">
     <!-- Navigation -->
