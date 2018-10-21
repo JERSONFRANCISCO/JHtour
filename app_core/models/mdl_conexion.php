@@ -1,5 +1,4 @@
 <?php
-
 	class mdl_Conexion
 	{
 		private $servidor;
@@ -14,7 +13,7 @@
 			$this->servidor = "localhost";
 			$this->usuario = "root";
 			$this->clave = "";
-			$this->base_datos = "bd_twitter";
+			$this->base_datos = "bd_tourpage";
 			$this->conectar_base_datos();
 		}
 

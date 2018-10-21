@@ -1,3 +1,8 @@
+<?php
+   require_once(__CTR_PATH . "ctr_inicio.php");
+  $ctr_inicio = new ctr_inicio();
+?>
+
   <!-- <body id="page-top" onload="rotar_imagen();"> -->
   <body id="page-top">
     <!-- Navigation -->
@@ -44,46 +49,19 @@
           </div>
         </div>
         <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-home fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading" ><a class="servicios-color-letras" href="#">Hospedaje</a></h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-leaf fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading"><a class="servicios-color-letras" href="#">Tours</a></h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-utensils fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading"><a class="servicios-color-letras" href="#">Alimentación</a></h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-car fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading"><a class="servicios-color-letras" href="#">Transporte</a></h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-gem fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading"><a class="servicios-color-letras" href="#">Todo incluido</a></h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
+          
+        <?php
+            foreach($ctr_inicio->get_posts() as $value){
+              echo "<div class='col-md-4'>";
+              echo "<span class='fa-stack fa-4x'>";
+              echo "<i class='fas fa-circle fa-stack-2x text-primary'></i>";
+              echo "<i class='fas $value[2] fa-stack-1x fa-inverse'></i>';";
+              echo "</span>";
+              echo "<h4 class='service-heading'><a class='servicios-color-letras' href='#'>$value[0]</a></h4>";
+              echo "<p class='text-muted'  style='text-align: justify !important;'>$value[1]</p>";
+              echo "</div>";
+            }
+        ?>
         </div>
       </div>
     </section>
