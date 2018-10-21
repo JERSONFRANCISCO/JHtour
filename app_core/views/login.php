@@ -1,10 +1,7 @@
   <style type="text/css">
     body { 
-
-      background-image: url(<?php echo __RSC_HOST_PATH."header-bg.jpg";?>);
-
+      
     } 
-
   </style>
 <body>
 <div class="container">
