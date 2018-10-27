@@ -1,8 +1,14 @@
-  <style type="text/css">
-    body { 
-      
-    } 
-  </style>
+<?php
+   require_once(__CTR_PATH . "ctr_login.php");
+  $ctr_login = new ctr_login();
+   //<!-- Bootstrap core CSS -->
+    echo "<link href='".__APP_DSG."vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>";
+    //<!-- Custom fonts for this template -->
+
+    //<!-- Custom styles for this template -->
+    echo "<link href='".__CSS_PATH."login.css' rel='stylesheet'>";
+?>
+
 <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
@@ -12,22 +18,23 @@
 
 			</div>
 			<div class="card-body">
-				<form>
+				
+				<form class="login100-form validate-form" name="frm_login" method="post">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text" id="txt_user" name="txt_user" class="form-control" placeholder="username">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" id="txt_pssw" name="txt_pssw" class="form-control" placeholder="password">
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
+						<input type="submit"  name="btn_login" id="btn_login"  class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
@@ -43,4 +50,12 @@
 	</div>
 </div>
 </body>
-</html>
+
+
+	<?php
+
+		if(isset($_POST['btn_login'])){
+			$ctr_login->btn_login_click();
+		}
+
+	?>
